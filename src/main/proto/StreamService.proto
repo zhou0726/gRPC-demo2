@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package example;
+
+service StreamService {
+  // 双向流调用
+  rpc BidirectionalStreaming(stream StreamRequest) returns (stream StreamResponse) {};
+}
+
+//请求的Dto
+message StreamRequest {
+  string message = 1;
+}
+
+//返回类型Dto
+message StreamResponse {
+  string message = 1;
+}
